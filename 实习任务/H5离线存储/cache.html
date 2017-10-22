@@ -1,0 +1,51 @@
+
+<!DOCTYPE html>
+<html lang='cn' manifest='cache.manifest'>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>离线缓存</title>
+</head>
+<body>
+    <form>
+        <label for="Name" accesskey="N" >name:<u>N</u></label>
+        <input type="text" id="Name" autocomplete="off" />
+    </form>
+   
+</body>
+<script type="text/javascript" src="cache.js"></script>
+<script type="text/javascript">
+var cache = window.applicationCache;
+console.log('test:' + test);  //cache.js定义的一个变量，初始值为10
+
+function load(url, callback){
+    var script = document.createElement('script');
+    script.src = url;
+    script.onload = function(){
+        callback && callback();
+    }
+    document.body.appendChild(script);
+}
+
+setTimeout(function(){
+    cache.addEventListener('updateready', function(){
+        log('更新完毕');
+        //cache.swapCache();
+        load('cache.js', function(){
+            console.log('test:' + test);    //test: 10
+        });    
+    });
+    cache.update();
+
+}, 20*1000);
+
+if(localStorage.pagecount)
+{
+    localStorage.pagecount=Number(localStorage.pagecount)+1;
+}
+else
+{
+    localStorage.pagecount=1;
+}
+document.write("Visits "+localStorage.pagecount+"time(s)");
+</script>
+</html>

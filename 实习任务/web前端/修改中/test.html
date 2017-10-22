@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>test</title>
+	<script src="https://unpkg.com/vue"></script>
+	<style type="text/css">
+		.tran{
+			width: 200px;
+			height: 200px;
+			background: red;
+			transition: 1s;
+		}
+		.tran:hover{
+			background: blue;
+			width: 400px;
+			transition: 1s;
+			
+		}
+
+	</style>
+</head>
+<div id="app1">
+<input type="text" v-model="pmsg" name="">
+	<child v-bind:message="pmsg"></child>
+</div>
+
+<div class="tran">
+	transition
+</div>
+<body>
+
+<script>
+	
+	Vue.component('child',{
+		props:['message'],
+		template:'<p>{{message}}</p>'
+	})
+	var app=new Vue({
+		el:'#app1',
+		data:{
+			pmsg:"parent-data"
+		}
+		
+	})
+</script>
+</body>
+</html>

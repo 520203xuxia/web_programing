@@ -1,0 +1,184 @@
+@charset "UTF-8";
+html, div, li, p {
+  margin: 0;
+  padding: 0; }
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  font-weight: normal; }
+
+body {
+  font-family: Cambria, Palatino, "Palatino Linotype","Palatino LT STD", Georgia,serif;
+  font-weight: 400;
+  font-size: 15px;
+  color: #393b40;
+  height: 100%;
+  overflow-y: scroll; }
+
+a {
+  color: #333;
+  text-decoration: none; }
+  a:hover, a:focus {
+    color: #74777b; }
+
+/*内边距和边框不会增加盒子的宽度*/
+*, *:after, *:before {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  box-sizing: border-box; }
+
+.clearfix:before, .clearfix:after {
+  content: " ";
+  display: table; }
+
+.clearfix:after {
+  clear: both; }
+
+.htmleaf-container {
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  top: 52px; }
+
+.related {
+  color: #fff;
+  background: #333;
+  text-align: center;
+  font-size: 1.25em;
+  padding: 3em 0;
+  margin: 0 -14px; }
+
+#content {
+  height: 700px;
+  overflow-y: scroll;
+  background-color: whitesmoke;
+  -webkit-transition: width 0.3s ease;
+  -moz-transition: width 0.3s ease;
+  -ms-transition: width 0.3s ease;
+  -o-transition: width 0.3s ease;
+  transition: width 0.3s ease; }
+
+.sidebar {
+  height: 700px;
+  overflow-y: scroll;
+  background-color: white;
+  -webkit-transition: margin 0.3s ease;
+  -moz-transition: margin 0.3s ease;
+  -ms-transition: margin 0.3s ease;
+  -o-transition: margin 0.3s ease;
+  transition: margin 0.3s ease; }
+
+#sidebar-left {
+  background: #ececec; }
+
+.collpased {
+  display: none; }
+
+@media (min-width: 992px) {
+  .collpased {
+    display: block; }
+
+  #sidebar-left.collpased {
+    margin-left: -25%; }
+
+  #sidebar-right.collapsed {
+    margin-right: -25%;
+    /* same width as sidebar */ } }
+@media (max-width: 992px) {
+  .collapsed1 {
+    display: none; }
+
+  #sidebar-left.collapsed1 {
+    margin-left: -25%;
+    /* same width as sidebar */ }
+
+  #sidebar-right.collapsed1 {
+    margin-right: -25%;
+    /* same width as sidebar */ }
+
+  .col-sm-6, .col-md-6 {
+    width: 100%; } }
+/*设置“提纲”居中*/
+#title-sidebar {
+  text-align: center;
+  font-size: 1.5em; }
+
+/*设置“相关文档”占sidebar一半宽*/
+.nav-tabs > li {
+  float: left;
+  margin-bottom: -1px;
+  width: 50%; }
+
+#collapseOne,
+#collapseTwo,
+#collapseThree,
+#collapseFour {
+  margin-left: 40px;
+  background: white; }
+  #collapseOne a:hover, #collapseOne a:focus,
+  #collapseTwo a:hover,
+  #collapseTwo a:focus,
+  #collapseThree a:hover,
+  #collapseThree a:focus,
+  #collapseFour a:hover,
+  #collapseFour a:focus {
+    text-decoration: none; }
+
+#headingOne,
+#headingTwo,
+#headingThree,
+#headingFour {
+  border-bottom: 1px solid #ccc;
+  border-top: 1px solid #ccc;
+  padding: 14px 24px;
+  background: white; }
+
+.sub-list li {
+  border-bottom: 1px solid #ccc;
+  padding: 10px;
+  cursor: pointer; }
+
+.container-fluid {
+  background-color: #0e90d2; }
+
+.navbar-default {
+  background-color: #0e90d2;
+  border-color: #0e90d2; }
+  .navbar-default .navbar-brand {
+    color: #fff; }
+    .navbar-default .navbar-brand:hover, .navbar-default .navbar-brand:focus {
+      color: #000; }
+  .navbar-default .navbar-text {
+    color: #fff; }
+  .navbar-default .navbar-nav > li > a, .navbar-default .navbar-nav > .active > a,
+  .navbar-default .navbar-nav > .open > a {
+    color: #fff; }
+    .navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus,
+    .navbar-default .navbar-nav > .open > a:hover,
+    .navbar-default .navbar-nav > .open > a:focus {
+      color: #000;
+      background-color: #0e90d2; }
+  .navbar-default .navbar-collapse {
+    border-color: #fff; }
+
+@media (max-width: 767px) {
+  .navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: #fff; }
+    .navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+      color: #000; }
+
+  .navbar-default .navbar-nav .open .dropdown-menu > .active > a {
+    color: #000; }
+    .navbar-default .navbar-nav .open .dropdown-menu > .active > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > .active > a:focus {
+      background-color: #0e90d2; } }
+
+/*# sourceMappingURL=index.css.map */

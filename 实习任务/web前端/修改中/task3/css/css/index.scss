@@ -1,0 +1,198 @@
+@mixin mar-pad($m,$p){
+	margin:$m;
+	padding:$p;
+}
+@mixin box-sizing(){
+	-webkit-box-sizing:border-box;
+	-moz-box-sizing:border-box;
+	-ms-box-sizing:border-box;
+	-o-box-sizing:border-box;
+	box-sizing:border-box;
+}
+@mixin transition($transition){
+	-webkit-transition:$transition;
+	-moz-transition:$transition;
+	-ms-transition:$transition;
+	-o-transition:$transition;
+	transition:$transition;
+}
+$navbar-color:#0e90d2;
+
+html,div,li,p{
+	@include mar-pad(0,0);
+}
+ul,ol{
+	@include mar-pad(0,0);
+	list-style:none;
+}
+h1,h2,h3,h4,h5,h6{
+	@include mar-pad(0,0);
+	font-size:100%;
+	font-weight:normal;
+}
+body{
+	font-family:Cambria, Palatino, "Palatino Linotype","Palatino LT STD", Georgia,serif;
+	font-weight:400;
+	font-size:15px;
+	color:#393b40;
+	height:100%;
+	overflow-y:scroll;
+}
+a{
+	color:#333;
+	text-decoration:none;
+	&:hover,&:focus{
+		color: #74777b;
+	}
+}
+/*内边距和边框不会增加盒子的宽度*/
+*,*:after,*:before{
+	@include box-sizing();
+}
+.clearfix:before,.clearfix:after{
+	content:" ";
+	display:table;
+}
+.clearfix:after{
+	clear:both;
+}
+.htmleaf-container{
+	margin:0 auto;
+	overflow:hidden;
+	position:relative;
+	top:52px;
+}
+.related{
+	color:#fff;
+	background:#333;
+	text-align:center;
+	font-size:1.25em;
+	padding:3em 0;
+	margin:0 -14px;
+}
+#content{
+	height:700px;
+	overflow-y:scroll;
+	background-color:whitesmoke;
+	@include transition(width 0.3s ease);
+}
+.sidebar{
+	height:700px;
+	overflow-y:scroll;
+	background-color:white;
+	@include transition(margin 0.3s ease);
+}
+#sidebar-left{
+	background:#ececec;
+}
+.collapsed{
+	display:none;
+}
+@media (min-width:992px){
+	.collapsed{
+		display: block;
+	}
+	#sidebar-left.collapsed{
+		margin-left: -25%;
+	}
+	#sidebar-right.collapsed {
+		margin-right: -25%; /* same width as sidebar */
+	}
+}
+@media (max-width: 992px) {
+	.collapsed1 {
+		display: none;
+	}
+	#sidebar-left.collapsed1 {
+		margin-left: -25%; /* same width as sidebar */
+	}
+	#sidebar-right.collapsed1 {
+		margin-right: -25%; /* same width as sidebar */
+	}
+	.col-sm-6,.col-md-6{
+		width: 100%;
+	}			
+}
+
+/*设置“提纲”居中*/
+#title-sidebar{
+	text-align: center;
+	font-size: 1.5em;
+}
+/*设置“相关文档”占sidebar一半宽*/
+.nav-tabs>li{
+	float: left;
+    margin-bottom: -1px;
+    width: 50%;
+}
+#collapseOne,
+#collapseTwo,
+#collapseThree,
+#collapseFour{
+	margin-left:40px;
+	background: white;
+	a{
+		&:hover,&:focus{
+			text-decoration: none;
+		}
+	}
+}
+#headingOne,
+#headingTwo,
+#headingThree,
+#headingFour{
+	border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    padding: 14px 24px;
+    background: white;
+}
+.sub-list li{
+	border-bottom:1px solid #ccc;
+	padding:10px;
+	cursor:pointer;
+}
+.container-fluid{
+	background-color:$navbar-color;
+}
+.navbar-default{
+	background-color:$navbar-color;
+	border-color:$navbar-color;
+	.navbar-brand{
+		color: #fff;
+		&:hover,&:focus{
+			color: #000;
+		}
+	}
+	.navbar-text{
+		color: #fff;
+	}
+	.navbar-nav >li >a,.navbar-nav >.active >a,
+	,.navbar-nav >.open >a{
+		color: #fff;
+		&:hover,&:focus{
+			color: #000;
+			background-color:$navbar-color;
+		}
+	}
+	.navbar-collapse{
+		border-color:#fff;
+	}
+
+}
+
+@media (max-width: 767px){
+	.navbar-default .navbar-nav .open .dropdown-menu > li > a{
+		color: #fff;
+		&:hover,&:focus{
+			color: #000;
+		}
+	}
+	.navbar-default .navbar-nav .open .dropdown-menu > .active > a{
+		color: #000;
+		&:hover,&:focus{
+			background-color:$navbar-color;
+		}
+		
+	}
+
+}
